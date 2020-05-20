@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../assets/fonts/icons/icomoon.ttf?79v2b1') format('truetype'),
+    url('../assets/fonts/icons/icomoon.woff?79v2b1') format('woff'),
+    url('../assets/fonts/icons/icomoon.svg?79v2b1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: LoresNB;
+  src: url('../assets/fonts/myfont/LR-Bold-Narrow.woff');
+}
+
+@font-face {
+  font-family: LoresNR;
+  src: url('../assets//fonts/myfont/LR-Narrow.woff');
+}
+
+@font-face {
+  font-family: LoresWR;
+  src: url('../assets//fonts/myfont/LR-Wide.woff');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  // speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$secondary-font-family: LoresNR, sans-serif;
+
+$color-primary-black: #181818;
+$color-secondary-black: #070707;
+$color-rich-black: #000;
+
+$color-blue-lighter: #198bca;
+$color-blue-light: #1677a1;
+$color-blue-dark:  #1b5f7e;
+$color-blue-darkest: #18313f;
+
+
+$color-primary-white: #ffffff;
+$color-secondary-white: #a5b7bf;
+
+$color-primary-amber: #c5a334;
+$color-primary-grey: #4d4d4e;
+
+*,*:after,*:before {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility
+}
+
+html {
+  font-size: 62.5%;
+  // background: radial-gradient(ellipse, $color-blue-light, $color-blue-darkest) fixed;
+  background: #1d1d1d fixed;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23198bca' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+
+  @media screen and (max-width: 1024px) {
+    background: #1d1d1d fixed;
+  }
+}
+
+body {
+  font: 300 11px/1.4 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #444
+}
+
+body.no-overflow {
+  overflow-x: hidden;
+  overflow-y: auto
+}
+
+body {
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+
+  @media screen and (max-width: 960px) {
+    overflow: auto;
+  }
+
+  @media screen and (max-width: 530px) {
+    overflow-x: hidden;
+  }
+}
+
+::selection {
+  background: $color-blue-dark;
+  color: #fff;
+  text-shadow: none
+}
+
+
+.container {
+  width: 100%;
+  will-change: contents;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  margin: 0 auto;
+  z-index: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  @media screen and (max-width: 960px) {
+      overflow: hidden;
+      height: 95%;
+  }
+}
+

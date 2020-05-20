@@ -1,0 +1,301 @@
+#nav_bar {
+  background: $color-primary-black;
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  min-height: 500px;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    min-height: 0;
+  }
+
+  @media screen and (max-width: 530px) {
+    position: fixed;
+  }
+
+  & a.logo {
+    background: $color-secondary-black;
+    display: block;
+    padding: 8px 0;
+
+    @media screen and (max-width: 960px) {
+      float: left;
+      padding: 11px 5px;
+      margin-right: 20px;
+    }
+  }
+
+  & a.logo img {
+    display: block;
+    padding: 0 5px;
+    margin: 8px auto;
+    width: 5rem;
+    height: auto
+  }
+
+  & nav {
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    top: 50%;
+    margin-top: -120px;
+    width: 100%;
+
+    @media screen and (max-width: 960px) {
+      width: 42%;
+      position: absolute;
+      left: 50%;
+      margin-left: -19%;
+      float: left;
+      overflow: hidden;
+      text-align: center;
+      height: 60px;
+      top: 0;
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: 530px) {
+      width: 100%;
+      position: fixed;
+      left: 100%;
+      opacity: 0;
+      margin-left: 0;
+      float: left;
+      overflow: hidden;
+      text-align: center;
+      height: 60px;
+      top: 60px;
+      margin-top: 0;
+      background: $color-primary-black;
+      -webkit-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+    }
+  }
+
+  & nav.show {
+    left: 0;
+    opacity: 1
+  }
+
+  & nav a {
+    font-size: 22px;
+    color: $color-primary-grey;
+    display: block;
+    line-height: 51px;
+    height: 40px;
+    position: relative;
+    text-decoration: none;
+
+    @media screen and (max-width: 960px) {
+      float: left;
+      margin-left: 12%;
+      line-height: 60px;
+      height: 60px;
+    }
+
+    @media screen and (max-width: 530px) {
+      float: left;
+      margin-left: 0 !important;
+      line-height: 60px;
+      height: 60px;
+      width: 20%;
+    }
+  }
+
+  & nav a:first-child {
+    margin-left: 0;
+  }
+
+  & nav a span {
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out
+  }
+
+  & nav a:hover {
+    color: $color-secondary-white;
+  }
+
+  & nav a:hover span {
+    opacity: 0
+  }
+
+  & nav a.active,#nav_bar nav a:hover {
+    color: $color-blue-lighter;
+  }
+
+  & nav a:after {
+    content: '';
+    font-size: 9px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: -22%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    z-index: 20;
+
+    @media screen and (max-width: 960px) {
+      bottom: 0;
+    }
+  }
+
+  & nav a:hover:after {
+    opacity: 1
+  }
+
+  & ul {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    z-index: 25;
+
+    @media screen and (max-width: 960px) {
+      position: static;
+      bottom: 20px;
+      width: auto;
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      margin: 0;
+      float: right;
+    }
+
+    @media screen and (max-width: 530px) {
+      display: none;
+    }
+  }
+
+  & ul li {
+    opacity: 1;
+    width: 6rem;
+
+    @media screen and (max-width: 960px) {
+      float: right;
+      height: 60px;
+      line-height: 60px;
+      margin: 0 10px;
+    }
+  }
+
+  & ul li a {
+    padding: 7px 0;
+    display: block;
+    font-size: 17px;
+    line-height: 16px;
+    color: $color-primary-grey;
+    text-decoration: none;
+
+    @media screen and (max-width: 960px) {
+      line-height: 60px;
+      padding: 0;
+    }
+  }
+
+  & ul li a:hover {
+    color: $color-blue-lighter;
+  }
+
+  & nav a:first-child:after {
+    content: 'HOME'
+  }
+
+  & nav a:first-child+a:after {
+    content: 'ABOUT'
+  }
+
+  & nav a:first-child+a+a:after {
+    content: 'SKILLS'
+  }
+
+  & nav a:first-child+a+a+a:after {
+    content: 'MY WORK'
+  }
+
+  & nav a:first-child+a+a+a+a:after {
+    content: 'CONTACT'
+  }
+}
+
+.icon-eye:before {
+  content: "\e905";
+}
+.icon-facebook:before {
+  content: "\e906";
+}
+.icon-github:before {
+  content: "\e907";
+}
+.icon-home1:before {
+  content: "\e908";
+}
+.icon-linkedin:before {
+  content: "\e909";
+}
+.icon-mail:before {
+  content: "\e90a";
+}
+.icon-menu:before {
+  content: "\e901";
+}
+.icon-rss:before {
+  content: "\e900";
+}
+.icon-smartphone:before {
+  content: "\e902";
+}
+.icon-tool:before {
+  content: "\e90b";
+}
+.icon-twitter:before {
+  content: "\e90c";
+}
+.icon-user:before {
+  content: "\e90d";
+}
+.icon-x:before {
+  content: "\e903";
+}
+
+
+#mobile-link {
+  display: none;
+
+  @media screen and (max-width: 530px) {
+    font-size: 30px;
+    color: $color-secondary-white;
+    float: right;
+    margin: 10px 20px 10px 10px;
+    display: block;
+    text-decoration: none;
+  }
+}
+
+#mobile-link:hover {
+  color: $color-blue-light;
+}
+
+.hidden {
+  display: none;
+}
+
