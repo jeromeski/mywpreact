@@ -22,7 +22,7 @@ const Spectacles = props => {
 
   const showSpecs = () => {
     showTL
-      .to($specsSVG, 0.25, { scale: 0.85 })
+      .to($specsSVG, { scale: 0.85 })
       .to($close, { opacity: 0 })
       .to($glintOne, { opacity: 0 })
       .to($glintTwo, { opacity: 0 })
@@ -31,7 +31,7 @@ const Spectacles = props => {
         $specsSVG,
         0.5,
         { autoAlpha: 0, scale: 0 },
-        { delay: 1.5, autoAlpha: 1, scale: 1, ease: 'back.out(2)' }
+        { autoAlpha: 1, scale: 1, ease: 'back.out(2)' }
       );
     return showTL;
   };

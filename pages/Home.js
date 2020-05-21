@@ -33,15 +33,13 @@ class Home extends Component {
     this.toggleEnterState()
   }
 
-
-
   render(){
     return (
       <div className='container'>
         <Outline in={this.state.isVisible} />
         <Spectacles in={this.state.isVisible} />
-        <HeadingHome />
-        <ButtonHome />
+        <HeadingHome in={this.state.isVisible} />
+        <ButtonHome in={this.state.isVisible} />
       </div>
     );
   }

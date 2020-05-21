@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TimelineMax } from 'gsap/all';
+import { Transition } from 'react-transition-group';
 
-function ButtonHome() {
+
+const duration = 2000
+
+function ButtonHome(props) {
   const [masterTL] = useState(new TimelineMax());
   const [clearTL] = useState(new TimelineMax());
   const [showTL] = useState(new TimelineMax());
@@ -24,15 +28,6 @@ function ButtonHome() {
     return showTL;
   };
 
-  // const showButton = () => {
-  //   btn.style.display = 'block';
-  // };
-
-  useEffect(() => {
-    go();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const go = () => {
     masterTL.add(clearStage()).add(showStage());
 
@@ -40,7 +35,15 @@ function ButtonHome() {
   };
 
   return (
-    <>
+    <Transition
+      in={props.in}
+      timeout={duration}
+      mountOnEnter={true}
+      unmountOnExit={true}
+      onEnter={() =>
+        go()
+      }
+    >
       <Link
         ref={el1 => {
           btn = el1;
@@ -49,7 +52,7 @@ function ButtonHome() {
         to='#'>
         Contact Me
       </Link>
-    </>
+    </Transition>
   );
 }
 
