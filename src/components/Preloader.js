@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import preloaderLogo from '../assets/preloader-logo.svg';
 import { randomQuote } from '../scripts/quote';
-import { Transition } from 'react-transition-group';
 
 const duration = 2000
 
-const Preloader = props => {
+const Preloader = ( )=> {
   const [quote] = useState(randomQuote());
 
   return (
-    <Transition
-      in={props.in}
-      timeout={duration}
-      mountOnEnter={true}
-      unmountOnExit={true}
-    >
+
       <div className='preloader'>
         <div className='inner'>
           <img src={preloaderLogo} alt='Front End Developer Loader' />
@@ -30,7 +24,7 @@ const Preloader = props => {
           </div>
         </div>
       </div>
-    </Transition>
+
   );
 };
 

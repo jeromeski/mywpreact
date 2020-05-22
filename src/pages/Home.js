@@ -8,10 +8,8 @@ class Home extends Component {
   constructor(){
     super()
     this.toggleEnterState = this.toggleEnterState.bind(this);
-    this.togglePreloadingState = this.togglePreloadingState.bind(this);
     this.state = {
       isVisible: false,
-      isLoading: false
     };
   }
 
@@ -19,13 +17,6 @@ class Home extends Component {
     const {isVisible} = this.state
     this.setState({
       isVisible: !isVisible
-    })
-  }
-
-  togglePreloadingState() {
-    const {isLoading} = this.state
-    this.setState({
-      isLoading: !isLoading
     })
   }
 
