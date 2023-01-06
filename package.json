@@ -34,7 +34,7 @@
     "from": "^0.1.7",
     "google-maps-react": "^2.0.6",
     "gsap": "^3.2.6",
-    "handlebars-loader": "^1.7.1",
+    "handlebars-loader": "^1.7.3",
     "html-webpack-plugin": "^4.3.0",
     "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.9.0",
